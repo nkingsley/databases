@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>chatterbox</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- external javascript -->
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    
+    <!-- internal javascript -->
+    <script src="scripts/config.js"></script>
+    <script src="scripts/message.js"></script>
+    <script src="scripts/app.js"></script>
+  </head>
+  <body>
+    <div id="main">
+      <h1>Chatter Box</h1>
+      <div class="rooms">
+        <label for="rooms">Rooms: </label>
+        <select name="rooms">
+          <option value="all_rooms">All Rooms</option>
+        </select>
+      </div>
+      <div class="chat-session"></div>    
+      <form class="chat-input">
+        <input type="text"></input>
+        <input type="submit" value="Send"></input>
+      </form>
+    </div>

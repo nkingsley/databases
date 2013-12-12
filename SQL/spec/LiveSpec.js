@@ -9,19 +9,17 @@ describe("Persistent Node Chat Server", function() {
 
   beforeEach(function(done) {
     dbConnection = mysql.createConnection({
-    /* TODO: Fill this out with your mysql username */
-      user: "",
-    /* and password. */
-      password: "",
-      database: "chat"
+      user: "root",
+      database: "chatserver"
     });
     dbConnection.connect();
 
-    var tablename = ""; // TODO: fill this out
+    var tablename = "messages"; // TODO: fill this out
 
     /* Empty the db table before each test so that multiple tests
      * (or repeated runs of the tests) won't screw each other up: */
     dbConnection.query("DELETE FROM " + tablename, done);
+
   });
 
   afterEach(function() {
@@ -48,9 +46,12 @@ describe("Persistent Node Chat Server", function() {
               dbConnection.query( queryString, queryArgs,
                 function(err, results, fields) {
                   // Should have one result:
+
                   expect(results.length).toEqual(1);
                   expect(results[0].username).toEqual("Valjean");
                   expect(results[0].message).toEqual("In mercy's name, three days is all I need.");
+console.log('open');
+                  
                   /* TODO: You will need to change these tests if the
                    * column names in your schema are different from
                    * mine! */
